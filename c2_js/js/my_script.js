@@ -41,52 +41,58 @@ let eleccion_usuario;
 let movimiento_usuario;
 let respuesta_ganador;
 let contador = 1;
-const n_intentos = parseInt(prompt("PIEDRA, PAPEL O TIJERA \n Ingrese el número de intentos: "));
+let ptj_usuario = 0;
+let ptj_pc = 0;
+let n_intentos = parseInt(prompt("PIEDRA, PAPEL O TIJERA \n Ingrese el número de intentos: "));
 while (contador <= n_intentos) {
-    const aleatorio = Math.floor(Math.random() * 4);
-    (aleatorio === 0) ? Math.floor(Math.random() * 4) : eleccion_pc = aleatorio;
+    eleccion_pc = Math.floor((Math.random() * (3 - 1 + 1)) + 1);
     if (eleccion_pc === 1) {
         movimiento_pc = "Piedra";
-    } else if (eleccion_pc === 2) {
+    }
+    if (eleccion_pc === 2) {
         movimiento_pc = "Papel";
-    } else if (eleccion_pc === 3) {
+    }
+    if (eleccion_pc === 3) {
         movimiento_pc = "Tijera";
-    } else {
-        movimiento_pc = "No válido"
     }
 
     eleccion_usuario = parseInt(prompt("PIEDRA, PAPEL O TIJERA \n Ingrese su elección: \n 1.- Piedra \n 2.- Papel \n 3.- Tijera"));
     if (eleccion_usuario === 1) {
         movimiento_usuario = "Piedra";
-    } else if (eleccion_usuario === 2) {
-        movimiento_usuario = "Papel";
-    } else if (eleccion_usuario === 3) {
-        movimiento_usuario = "Tijera";
-    } else {
-        movimiento_usuario = "No válido";
-        alert("Opción no válida, vuelva a intentar");
     }
-
+    if (eleccion_usuario === 2) {
+        movimiento_usuario = "Papel";
+    }
+    if (eleccion_usuario === 3) {
+        movimiento_usuario = "Tijera";
+    }
     if (movimiento_pc === movimiento_usuario) {
         alert("PC usó: " + movimiento_pc + "\n Usuario usó: " + movimiento_usuario + "\n Ha sido un empate");
     } else if (movimiento_pc === "Tijera" && movimiento_usuario === "Papel") {
         alert("PC usó: " + movimiento_pc + "\n Usuario usó: " + movimiento_usuario + "\n El ganador es el PC");
+        ptj_pc++;
     } else if (movimiento_pc === "Papel" && movimiento_usuario === "Piedra") {
         alert("PC usó: " + movimiento_pc + "\n Usuario usó: " + movimiento_usuario + "\n El ganador es el PC");
+        ptj_pc++;
     } else if (movimiento_pc === "Piedra" && movimiento_usuario === "Tijera") {
         alert("PC usó: " + movimiento_pc + "\n Usuario usó: " + movimiento_usuario + "\n El ganador es el PC");
+        ptj_pc++;
     } else if (movimiento_usuario === "Tijera" && movimiento_pc === "Papel") {
         alert("PC usó: " + movimiento_pc + "\n Usuario usó: " + movimiento_usuario + "\n El ganador es el Usuario");
+        ptj_usuario++;
     } else if (movimiento_usuario === "Papel" && movimiento_pc === "Piedra") {
         alert("PC usó: " + movimiento_pc + "\n Usuario usó: " + movimiento_usuario + "\n El ganador es el Usuario");
+        ptj_usuario++;
     } else if (movimiento_usuario === "Piedra" && movimiento_pc === "Tijera") {
         alert("PC usó: " + movimiento_pc + "\n Usuario usó: " + movimiento_usuario + "\n El ganador es el Usuario");
+        ptj_usuario++;
     } else {
+        console.log(movimiento_pc + " " + movimiento_usuario);
         alert("Opciones no válidas");
     }
     contador++;
 }
-alert("MUCHAS GRACIAS POR JUGAR!");
+alert("MUCHAS GRACIAS POR JUGAR! \n Tu puntuación fue de: " + ptj_usuario + " y la del PC fue de: " + ptj_pc);
 
 
 
