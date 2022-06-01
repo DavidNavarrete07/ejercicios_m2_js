@@ -20,11 +20,15 @@ while (minutero <= 5) {
 let clientes = 1;
 let numero_mesas = parseInt(prompt("Ingrese la cantidad de mesas: "));
 
-while (clientes <= numero_mesas) {
-    console.log("¡Bienvenid@ a mi café! Su mesa es la: " + clientes);
-    clientes++;
+if (numero_mesas > 200) {
+    alert("No tenemos tantas mesas disponibles");
+} else {
+    while (clientes <= numero_mesas) {
+        console.log("¡Bienvenid@ a mi café! Su mesa es la: " + clientes);
+        clientes++;
+    }
+    console.log("El número total de mesas usadas por clientes es: " + numero_mesas);
 }
-console.log("El número total de mesas usadas por clientes es: " + numero_mesas);
 /*
     Ejercicios asincrónicos
 */

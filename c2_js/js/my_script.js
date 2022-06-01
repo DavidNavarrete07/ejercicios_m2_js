@@ -42,7 +42,7 @@ let movimiento_usuario;
 let respuesta_ganador;
 let contador = 1;
 const n_intentos = parseInt(prompt("PIEDRA, PAPEL O TIJERA \n Ingrese el número de intentos: "));
-do {
+while (contador <= n_intentos) {
     const aleatorio = Math.floor(Math.random() * 4);
     (aleatorio === 0) ? Math.floor(Math.random() * 4) : eleccion_pc = aleatorio;
     if (eleccion_pc === 1) {
@@ -85,7 +85,7 @@ do {
         alert("Opciones no válidas");
     }
     contador++;
-} while (contador <= n_intentos);
+}
 alert("MUCHAS GRACIAS POR JUGAR!");
 
 
