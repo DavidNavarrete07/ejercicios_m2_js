@@ -31,6 +31,7 @@ function contarDeA_n(contar_de_a, contar_hasta) {
 }
 function venganzaFizzBuzz(veces_a_contar, fizz_num, buzz_num) {
     let num = 1;
+    let msj = "";
     while (num <= veces_a_contar) {
         if ((num % fizz_num === 0) && (num % buzz_num === 0)) {
             console.log("Hola Mundo");
@@ -39,10 +40,12 @@ function venganzaFizzBuzz(veces_a_contar, fizz_num, buzz_num) {
         } else if (num % buzz_num === 0) {
             console.log("Mundo");
         } else {
+            msj = msj += num + ",";
             console.log(num);
         }
         num++;
     }
+    console.log("Los números fueron: " + msj);
 }
 
 let numero1 = 0;
