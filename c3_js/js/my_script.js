@@ -46,3 +46,15 @@ while (num <= 100) {
     }
     num++;
 }
+
+//Múltiplos de 7 entre 100 y 300
+let n = 100;
+while(n <= 300){
+    if(n % 7 === 0){
+        console.log("GATITO");
+    }else{
+        console.log(n + " CUYE");
+    }
+    n++;
+}
+
