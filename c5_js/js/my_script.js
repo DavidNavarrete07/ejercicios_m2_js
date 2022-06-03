@@ -9,6 +9,21 @@ function printReverse([arreglo]){
 }   
 function reverser([arreglo_a_invertir]){
     console.log(arreglo_a_invertir.reverse());
+    // Forma larga con for
+    /*
+    arreglo_inverso = [];
+    for(let i = arreglo_a_invertir.length-1; i>=0; i--){
+        arreglo_inverso.push(arreglo_a_invertir[i]);
+    }
+    console.log(arreglo_inverso);
+    */
+}
+function sumArray([suma_arreglo]){
+    let suma = 0;
+    for(let i = 0; i < suma_arreglo.length; i++){
+        suma+=suma_arreglo[i];
+    }
+    console.log("La suma total del arreglo es: " + suma);
 }
 // Métodos de arreglos
 const marcas_informaticas = ["HP", "Acer", "Lenovo", "Intel", "AMD"];
@@ -54,3 +69,8 @@ const frutas = ["Kiwi", "Plátano", "Manzana"];
 const numeros = [1, 2, 3, 4];
 printReverse([numeros]);
 reverser([frutas]);
+
+/*
+    Ejercicios asincrónicos
+*/
+sumArray([numeros]);
