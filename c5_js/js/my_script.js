@@ -2,11 +2,13 @@
     Arreglos
 */
 // Funciones
+// Entrega los elementos del arreglo de forma invertida
 function printReverse([arreglo]){
     for (let i = arreglo.length-1; i >=0; i--) {
         console.log(arreglo[i]);
     }
 }   
+// Entrega el arreglo invertido
 function reverser([arreglo_a_invertir]){
     console.log(arreglo_a_invertir.reverse());
     // Forma larga con for
@@ -18,6 +20,7 @@ function reverser([arreglo_a_invertir]){
     console.log(arreglo_inverso);
     */
 }
+// Entrega la suma del arreglo
 function sumArray([suma_arreglo]){
     let suma = 0;
     for(let i = 0; i < suma_arreglo.length; i++){
