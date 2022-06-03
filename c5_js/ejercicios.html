@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arreglos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+    <h1 class="text-center fw-bold">Aprendiendo arreglos con JS</h1>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <script>
+        // 1.- Array con números del 1 al 255
+        function devolverArregloHasta255() {
+            let arreglo = [];
+            for (let i = 1; i <= 255; i++) {
+                arreglo.push(i);
+            }
+            return arreglo;
+        }
+        // 2.- Suma de todos los números pares del 1 al 1000
+        function devolverSumaParesHastaMil() {
+            let suma = 0;
+            for (let i = 1; i <= 1000; i++) {
+                if (i % 2 === 0) {
+                    suma = suma + i;
+                }
+            }
+            return suma;
+        }
+        // 3.- Suma de todos los números impares desde el 1 al 5000
+        function devolverSumaImparesHasta5000() {
+            let suma = 0;
+            for (let i = 1; i <= 1000; i++) {
+                if (i % 2 != 0) {
+                    suma = suma + i;
+                }
+            }
+            return suma;
+        }
+        // 4.- Suma de los elementos del arreglo
+        function devolverSumaArreglo([arreglo]) {
+            let suma = 0;
+            for (let i = 0; i < arreglo.length; i++) {
+                suma += arreglo[i];
+            }
+            return suma;
+        }
+        // 5.- Valor máximo dentro del arreglo
+        function encontrarMax([arreglo]) {
+            let max = arreglo[0];
+            for (let i = 0; i < arreglo.length; i++) {
+                if (max < arreglo[i]) {
+                    max = arreglo[i];
+                }
+            }
+            return max;
+        }
+        // 6.- Promedio dentro del arreglo
+        function encontrarPromedio([arreglo]) {
+            let promedio = 0;
+            let suma = 0;
+            for (let i = 0; i < arreglo.length; i++) {
+                suma += arreglo[i];
+            }
+            promedio = suma / arreglo.length;
+            return promedio;
+        }
+        // 7.- Array de impares del 1 hasta el 50
+        function mostrarImparesHasta50() {
+            let impares = [];
+            for (let i = 0; i <= 50; i++) {
+                if (i % 2 != 0) {
+                    impares.push(i);
+                }
+            }
+            return impares;
+        }
+        // 8.- Mayor que Y
+        function encontrarMayoresQueY(y, [arreglo]) {
+            let mayores = [];
+            for (let i = 0; i < arreglo.length; i++) {
+                if (arreglo[i] > y) {
+                    mayores.push(arreglo[i]);
+                }
+            }
+            return mayores;
+        }
+        // 9.- Cuadrados: reemplazo de el número del arreglo por el cuadrado de ese número
+        function reemplazarPorCuadradoDelNumero([arreglo]) {
+            let arreglo_cuadrados = [];
+            for (let i = 0; i < arreglo.length; i++) {
+                arreglo_cuadrados.push(arreglo[i] * arreglo[i]);
+            }
+            return arreglo_cuadrados;
+        }
+        // 10.- Negativos: reemplazar cualquier n° negativo por 0 en el arreglo
+        function reemplazarNegativosPor0([arreglo]) {
+            for (let i = 0; i < arreglo.length; i++) {
+                if (arreglo[i] < 0) {
+                    arreglo[i] = 0;
+                }
+            }
+            return arreglo;
+        }
+        // Función para encontrar el valor mínimo dentro del arreglo
+        function encontrarMin([arreglo]) {
+            let min = arreglo[0];
+            for (let i = 0; i < arreglo.length; i++) {
+                if (min > arreglo[i]) {
+                    min = arreglo[i];
+                }
+            }
+            return min;
+        }
+        // 11.- Max/Min/Promedio: encontrar el valor máximo, mínimo y el promedio dentro de un arreglo
+        function devolverMaxMinPromedio([arreglo]) {
+            let arreglo_final = [];
+            let max = encontrarMax([arreglo]);
+            let min = encontrarMin([arreglo]);
+            let promedio = encontrarPromedio([arreglo]);
+            arreglo_final.push(max, min, promedio);
+            return arreglo_final;
+        }
+        // 12.- Intercambio de valores: intercambiar el primer elemento del array por el último y el último por el primero
+        function intercambiarPrimeroPorUltimo([arreglo]) {
+            let ultima = arreglo[arreglo.length - 1];
+            let primera = arreglo[0];
+            for (let i = 0; i < arreglo.length; i++) {
+                if (arreglo[i] === ultima) {
+                    arreglo[i] = primera;
+                } else if (arreglo[i] === primera) {
+                    arreglo[i] = ultima;
+                }
+            }
+            return arreglo;
+        }
+        // 13.- Número a String: reemplazar valores negativos dentro del arreglo por "Dojo" 
+        function reemplazarNegativosPorString([arreglo]) {
+            for (let i = 0; i < arreglo.length; i++) {
+                if (arreglo[i] < 0) {
+                    arreglo[i] = "Dojo";
+                }
+            }
+            return arreglo;
+        }
+
+        /*
+            Ejercicios intermedios
+        */
+        // 1.- Sigma: devuelve la suma de todos los números positivos hasta el n° indicado (1+2+3+4...)
+        function sigma(num) {
+            let suma = 0;
+            for (let i = 0; i <= num; i++) {
+                suma = suma += i;
+            }
+            return suma;
+        }
+        // 2.- Factorial: devuelve la multiplicación de todos los números positivos hasta el n° indicado (1*2*3*4..)
+        function factorial(num) {
+            let resultado = 1;
+            if (num > 0) {
+                for (let i = 1; i <= num; i++) {
+                    resultado = resultado * i;
+                }
+            } else {
+                return alert("No se permiten números negativos");
+            }
+            return resultado;
+        }
+        // 3.- Fibonacci 
+        function fibonacci(num) {
+            // const fib = [0, 1]; //Números en los que empieza fibonacci
+            // for (let i = 2; i <= num; i++) { //Empezamos en 2 porque las posiciones 0 y 1 ya las tenemos
+            //     console.log("valor i: " + i);
+            //     console.log("n -1: " + fib[i - 1]);
+            //     console.log("n -2: " + fib[i - 2]);
+            //     fib[i] = fib[i - 1] + fib[i - 2] //Acumulamos los valores por cada iteración (el anterior y el anterior del anterior)
+            //     console.log("valor fib[i]: " + fib[i]);
+            // }
+            // return fib[num];
+            // Fibonacci recursivo
+            return num < 2 ? num : fibonacci(num - 1) + fibonacci(num - 2);
+        }
+        // 4.- Penúltimo elemento del arreglo
+        function devolverPenultimoElemento([arreglo]) {
+            if (arreglo.length > 2) {
+                penultimo = arreglo[arreglo.length - 2];
+                return penultimo;
+            } else {
+                return null;
+            }
+        }
+        // 5.- Último elemento del arreglo
+        function devolverUltimoElemento([arreglo]){
+            if(arreglo.length > 2){
+                ultimo = arreglo[arreglo.length-1];
+                return ultimo;
+            }else{
+                return null;
+            }
+        }
+        // 6.- Segundo más grande en arreglo
+        function encontrarSegundoMasGrande([arreglo]) {
+            let max = 0;
+            let segundo_mayor = 0;
+            if (arreglo.length > 2) {
+                for (let i = 0; i < arreglo.length; i++) {
+                    console.log(max);
+                    if (arreglo[i] > max) {
+                        segundo_mayor = max;
+                        max = arreglo[i];
+                    } else {
+                        if (arreglo[i] > segundo_mayor) {
+                            segundo_mayor = arreglo[i];
+                        }
+                    }
+                }
+            }else{
+                return null;
+            }
+            return segundo_mayor;
+        }
+        // 7.- Doble Problema Par: devolver un array dado duplicando cada uno de sus elementos y manteniendo el orden original
+        function duplicarValoresArreglo([arreglo]) {
+            let arreglo_duplicado = arreglo;
+            for (let i = 0; i < arreglo.length; i += 2) { //Por cada iteración el arreglo incrementará su tamaño, por lo que al final será el doble de grande por eso se itera en saltos de 2
+                // Inserto el dato duplicado en la posicion i+1 -> posicion siguiente
+                arreglo.splice(i + 1, 0, arreglo[i]);
+            }
+            return arreglo;
+        }
+    </script>
+</body>
+
+</html>
