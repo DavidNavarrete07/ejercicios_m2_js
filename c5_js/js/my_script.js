@@ -3,9 +3,13 @@
 */
 // Funciones
 function printReverse([arreglo]){
-    arreglo.reverse();
-    console.log(arreglo);
+    for (let i = arreglo.length-1; i >=0; i--) {
+        console.log(arreglo[i]);
+    }
 }   
+function reverser([arreglo_a_invertir]){
+    console.log(arreglo_a_invertir.reverse());
+}
 // Métodos de arreglos
 const marcas_informaticas = ["HP", "Acer", "Lenovo", "Intel", "AMD"];
 // Length: Se usa para saber cuantos elementos tiene un arreglo
@@ -47,4 +51,6 @@ saludo_cumple.split(" ");//Se separará por cada espacio que se encuentre ~ ["Fe
 */
 // Reverso de arreglo                        
 const frutas = ["Kiwi", "Plátano", "Manzana"];
-printReverse([frutas]);
+const numeros = [1, 2, 3, 4];
+printReverse([numeros]);
+reverser([frutas]);
