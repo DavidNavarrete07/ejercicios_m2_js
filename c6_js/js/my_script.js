@@ -38,14 +38,20 @@ miAuto["color"]; //Blanco
 */
 // Ejercicio 1
 let peliculas = [
-    { titulo: "King Kong", rating: 5, loHasVisto: "Viste" },
-    { titulo: "El viaje de Chihiro", rating: 4, loHasVisto: "Viste" },
-    { titulo: "Fracturado", rating: 5, loHasVisto: "No viste" },
-    { titulo: "Los Vengadores", rating: 3, loHasVisto: "No viste" },
-    { titulo: "Número 9", rating: 2, loHasVisto: "Viste" },
+    { titulo: "King Kong", rating: 5, loHasVisto: true },
+    { titulo: "El viaje de Chihiro", rating: 4, loHasVisto: true },
+    { titulo: "Fracturado", rating: 5, loHasVisto: false },
+    { titulo: "Los Vengadores", rating: 3, loHasVisto: false },
+    { titulo: "Número 9", rating: 2, loHasVisto: true },
 ]
+let msj = "";
 for (let pelicula in peliculas) {
-    console.log(peliculas[pelicula]["loHasVisto"] + " " + peliculas[pelicula]["titulo"] + " - " + peliculas[pelicula]["rating"] + " estrellas")
+    if (peliculas[pelicula]["loHasVisto"] == true) {
+        msj = "Viste";
+    } else {
+        msj = "No viste";
+    }
+    console.log(msj + " " + peliculas[pelicula]["titulo"] + " - " + peliculas[pelicula]["rating"] + " estrellas")
 }
 // Ejercicio 2
 console.log(arregloDeObjetos(5, "Hola"));
