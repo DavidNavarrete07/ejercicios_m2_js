@@ -6,7 +6,15 @@ function arregloDeObjetos(numero, palabra) {
     }
     return arreglo;
 }
-
+function devolverCantidadCerosFactorial(num) {
+    if (num > 0) {
+        let resultado_uno = num / 5;
+        let resultado_dos = resultado_uno / 5;
+        return resultado_uno + resultado_dos;
+    } else {
+        return null;
+    }
+}
 /*
     Objetos
 */
@@ -46,13 +54,15 @@ let peliculas = [
 ]
 let msj = "";
 for (let pelicula in peliculas) {
-    if (peliculas[pelicula]["loHasVisto"] == true) {
-        msj = "Viste";
-    } else {
-        msj = "No viste";
-    }
+    (peliculas[pelicula]["loHasVisto"]) ? msj = "Viste" : msj = "No viste";
     console.log(msj + " " + peliculas[pelicula]["titulo"] + " - " + peliculas[pelicula]["rating"] + " estrellas")
 }
 // Ejercicio 2
 console.log(arregloDeObjetos(5, "Hola"));
 console.log(arregloDeObjetos(3, "Chau"));
+
+/*
+    Ejercicios extra
+*/
+// 1 Escriba una función/método que determine la cantidad de 0’s a la derecha de n! (factorial)
+console.log(devolverCantidadCerosFactorial(50)); //12
