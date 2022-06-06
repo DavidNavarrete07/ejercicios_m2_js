@@ -197,12 +197,11 @@
             }
         }
         // 5.- Último elemento del arreglo
-        function devolverUltimoElemento([arreglo]){
-            if(arreglo.length > 2){
-                ultimo = arreglo[arreglo.length-1];
-                return ultimo;
-            }else{
+        function devolverNUltimoElemento([arreglo], indice){
+            if(indice > arreglo.length-1){
                 return null;
+            }else{
+                return arreglo[arreglo.length - indice - 1];
             }
         }
         // 6.- Segundo más grande en arreglo
