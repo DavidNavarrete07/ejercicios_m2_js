@@ -24,5 +24,23 @@ const anterior_div_source = div_source.innerHTML;
 div_source.innerHTML = div_destination.innerHTML;
 div_destination.innerHTML = anterior_div_source;
 
-// Agregar o eliminar nuevas etiquetas
-document.createElement("");
+// ¿Cómo Agregar nuevas etiquetas?
+// 1. Creamos la etiqueta nueva
+const div_footer = document.createElement('div');
+
+// 2. Le damos un contenido interno
+div_footer.innerHTML = '<p>Todos los derechos reservados. Consultas al <a href="https://www.sence.gob.cl/">Sence</a></p>';
+
+// 3. Nos traemos la etiqueta madre a una variable
+const footer = document.querySelector('footer');
+
+// 4. Agregamos la etiqueta hija a la madre
+footer.appendChild(div_footer);
+
+// Cómo eliminar etiquetas ya existentes (vamos a eliminar el div#year)
+
+// 1. Me traigo la etiqueta y la dejo en una variable
+const year = document.querySelector('#year');
+
+// 2. Hago que epp padre remueva al hijo que deseamos eliminar
+footer.removeChild(year)
