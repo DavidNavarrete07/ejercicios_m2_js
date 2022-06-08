@@ -200,8 +200,7 @@ input_color.addEventListener('keydown', function onEvent(event) {
             text_info.textContent = "";
             document.body.style["background-color"] = input_color.value;
         } else {
-            text_info.style["color"] = "red";
-            text_info.style["font-weight"] = "bold";
+            text_info.style.cssText = "color: red; font-weight: bold;";
             text_info.textContent = "Este color no existe, el color de fondo volverá a ser blanco";
             document.body.style["background-color"] = "white";
         }
@@ -210,3 +209,4 @@ input_color.addEventListener('keydown', function onEvent(event) {
     }
 });
 //  Colores primarios: rojo, azul, amarillo
+
